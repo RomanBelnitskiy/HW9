@@ -1,4 +1,4 @@
-package collection;
+package org.example.collection;
 
 /*
     Написати свій клас MyStack як аналог класу Stack, який працює за принципом LIFO (last-in-first-out).

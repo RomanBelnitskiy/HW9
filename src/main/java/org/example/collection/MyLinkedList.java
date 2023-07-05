@@ -1,13 +1,5 @@
 package org.example.collection;
 
-/*
-    Напишіть свій клас MyLinkedList як аналог класу LinkedList.
-
-    Не можна використовувати масив. Кожний елемент повинен бути окремим
-    об'єктом-посередником (Node - нода), що зберігає посилання на попередній
-    та наступний елемент колекції (двозв'язний список).
- */
-
 import java.util.Objects;
 
 public class MyLinkedList<T> {
@@ -15,8 +7,6 @@ public class MyLinkedList<T> {
     private int size;
 
     public MyLinkedList() {
-        first = last = null;
-        size = 0;
     }
 
     public void add(T value) {
@@ -87,29 +77,5 @@ public class MyLinkedList<T> {
         } while (i < index);
 
         return node.element;
-    }
-
-    private static class Node<T> {
-        T element;
-        Node<T> next;
-        Node<T> prev;
-
-        Node(T element, Node<T> next, Node<T> prev) {
-            this.element = element;
-            this.next = next;
-            this.prev = prev;
-        }
-
-        static <T> Node<T> nodeOf(T element) {
-            return new Node<>(element, null, null);
-        }
-
-        static <T> Node<T> nodeOf(T element, Node<T> next) {
-            return new Node<>(element, next, null);
-        }
-
-        static <T> Node<T> nodeOf(T element, Node<T> next, Node<T> prev) {
-            return new Node<>(element, next, prev);
-        }
     }
 }
